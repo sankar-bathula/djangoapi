@@ -1,5 +1,6 @@
 from django.core.serializers import serialize
 import json
+from django.http import HttpResponse
 class SerializeMixin(object):
     "SerializeMixin for json data and python dicttionary data structure"
     def serialize(self, qs):
