@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django_api import views
+# from django.conf.urls import url
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path(r'^api/$', views.EmployeeCRUDView.as_view(), name="CRUD"),
+# ]
+from django.conf.urls import url
+from django.contrib import admin
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/$', views.EmployeeCRUDCBV.as_view()),
+    # url(r'^api/$', views.EmployeeListCBV.as_view()),
 ]
